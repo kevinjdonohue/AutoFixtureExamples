@@ -41,7 +41,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calculator.cs" />
+    <Compile Include="DebugMessageBuffer.cs" />
+    <Compile Include="EmailMessage.cs" />
+    <Compile Include="EmailMessageBuffer.cs" />
     <Compile Include="IntCalculator.cs" />
+    <Compile Include="LogMessage.cs" />
+    <Compile Include="LogMessageCreator.cs" />
     <Compile Include="NameJoiner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

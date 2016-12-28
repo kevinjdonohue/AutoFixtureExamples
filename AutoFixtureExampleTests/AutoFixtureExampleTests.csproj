@@ -69,7 +69,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CalculatorTests.cs" />
+    <Compile Include="DebugMessageBufferTests.cs" />
+    <Compile Include="EmailMessageBufferTests.cs" />
     <Compile Include="IntCalculatorTests.cs" />
+    <Compile Include="LogMessageCreatorTests.cs" />
     <Compile Include="NameJoinerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
