@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calculator.cs" />
+    <Compile Include="Customer.cs" />
     <Compile Include="DebugMessageBuffer.cs" />
     <Compile Include="EmailMessage.cs" />
     <Compile Include="EmailMessageBuffer.cs" />
@@ -48,6 +49,8 @@
     <Compile Include="LogMessage.cs" />
     <Compile Include="LogMessageCreator.cs" />
     <Compile Include="NameJoiner.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="OrderItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

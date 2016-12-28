@@ -74,6 +74,7 @@
     <Compile Include="IntCalculatorTests.cs" />
     <Compile Include="LogMessageCreatorTests.cs" />
     <Compile Include="NameJoinerTests.cs" />
+    <Compile Include="OrderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
