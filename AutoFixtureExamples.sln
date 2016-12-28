@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoFixtureTests", "AutoFixtureTests\AutoFixtureTests.csproj", "{58AA1383-3AAC-4F10-80EB-267250A83198}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoFixtureExampleTests", "AutoFixtureExampleTests\AutoFixtureExampleTests.csproj", "{58AA1383-3AAC-4F10-80EB-267250A83198}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoFixtureExample", "AutoFixtureExample\AutoFixtureExample.csproj", "{C54828AC-DE52-4870-A8D4-3EB8AE36101D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{58AA1383-3AAC-4F10-80EB-267250A83198}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58AA1383-3AAC-4F10-80EB-267250A83198}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58AA1383-3AAC-4F10-80EB-267250A83198}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C54828AC-DE52-4870-A8D4-3EB8AE36101D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C54828AC-DE52-4870-A8D4-3EB8AE36101D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C54828AC-DE52-4870-A8D4-3EB8AE36101D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C54828AC-DE52-4870-A8D4-3EB8AE36101D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
