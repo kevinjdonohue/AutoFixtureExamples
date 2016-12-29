@@ -1,28 +1,62 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace AutoFixtureExample
 {
     public class EmailMessageBuffer
     {
-        public List<EmailMessage> Emails { get; set; }
+        private readonly IEmailGateway _emailGateway;
+        private List<EmailMessage> _emails;
 
-        public EmailMessageBuffer()
+        public List<EmailMessage> Emails
         {
-            Emails = new List<EmailMessage>();
+            get { return _emails; }
+            set { _emails = value; }
         }
 
-        public void SendAll()
+        public int UnsentMessagesCount => _emails.Count;
+
+        public IEmailGateway EmailGateway => _emailGateway;
+
+        public EmailMessageBuffer(IEmailGateway emailGateway)
         {
-            foreach (EmailMessage email in Emails)
-            {
-                Console.WriteLine(email);
-            }
+            _emailGateway = emailGateway;
+            _emails = new List<EmailMessage>();
         }
 
         public void Add(EmailMessage email)
         {
-            Emails.Add(email);
+            _emails.Add(email);
+        }
+
+        public void SendAll()
+        {
+            List<EmailMessage> allEmails = _emails.ToList();
+
+            SendEmails(allEmails);
+        }
+
+        public void SendLimited(int maximumMessagesToSend)
+        {
+            List<EmailMessage> limitedBatchOfEmails = _emails.Take(maximumMessagesToSend).ToList();
+
+            SendEmails(limitedBatchOfEmails);
+        }
+
+        private void SendEmails(List<EmailMessage> emailMessages)
+        {
+            foreach (EmailMessage email in emailMessages)
+            {
+                SendEmail(email);
+            }
+        }
+
+        private void SendEmail(EmailMessage email)
+        {
+            Console.WriteLine($"Sending email to {email.ToAddress}");
+            _emailGateway.Send(email);
+            _emails.Remove(email);
         }
     }
 }

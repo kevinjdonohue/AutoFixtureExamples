@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel.Activities" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,6 +49,7 @@
     <Compile Include="EmailMessage.cs" />
     <Compile Include="EmailMessageBuffer.cs" />
     <Compile Include="FlightDetails.cs" />
+    <Compile Include="IEmailGateway.cs" />
     <Compile Include="IntCalculator.cs" />
     <Compile Include="LogMessage.cs" />
     <Compile Include="LogMessageCreator.cs" />

@@ -1,4 +1,6 @@
-﻿namespace AutoFixtureExample
+﻿using System.Globalization;
+
+namespace AutoFixtureExample
 {
     public class Calculator
     {
@@ -7,6 +9,11 @@
         public void Subtract(int number)
         {
             Value -= number;
-        }  
+        }
+
+        public void Add(int number)
+        {
+            Value += number;
+        }
     }
 }

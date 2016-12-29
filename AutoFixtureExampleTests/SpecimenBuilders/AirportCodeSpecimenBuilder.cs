@@ -12,7 +12,7 @@ namespace AutoFixtureExampleTests.SpecimenBuilders
 
             if (propertyInfo == null)
             {
-                return new NoSpecimen(request);
+                return new NoSpecimen();
             }
 
             bool isAirportPropertyCode = propertyInfo.Name.Contains("AirportCode") 
@@ -23,7 +23,7 @@ namespace AutoFixtureExampleTests.SpecimenBuilders
                 return RandomAirportCode();
             }
 
-            return new NoSpecimen(request);
+            return new NoSpecimen();
         }
 
         private string RandomAirportCode()
