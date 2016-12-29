@@ -71,6 +71,7 @@
     <Compile Include="CalculatorTests.cs" />
     <Compile Include="DebugMessageBufferTests.cs" />
     <Compile Include="EmailMessageBufferTests.cs" />
+    <Compile Include="FlightDetailsTests.cs" />
     <Compile Include="IntCalculatorTests.cs" />
     <Compile Include="LogMessageCreatorTests.cs" />
     <Compile Include="NameJoinerTests.cs" />

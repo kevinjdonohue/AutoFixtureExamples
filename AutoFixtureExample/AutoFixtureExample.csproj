@@ -45,6 +45,7 @@
     <Compile Include="DebugMessageBuffer.cs" />
     <Compile Include="EmailMessage.cs" />
     <Compile Include="EmailMessageBuffer.cs" />
+    <Compile Include="FlightDetails.cs" />
     <Compile Include="IntCalculator.cs" />
     <Compile Include="LogMessage.cs" />
     <Compile Include="LogMessageCreator.cs" />
