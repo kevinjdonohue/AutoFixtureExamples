@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using AutoFixtureExample;
+using AutoFixtureExampleTests.SpecimenBuilders;
 using FluentAssertions;
 using Ploeh.AutoFixture;
 using Xunit;
@@ -103,6 +104,18 @@ namespace AutoFixtureExampleTests
             flightDetails.DepartureAirportCode.Should().Be("LHR");
             flightDetails.MealOptions.Should().HaveCount(2);
             flightDetails.MealOptions.ShouldBeEquivalentTo(expectedMealOptions, options => options.WithStrictOrdering());
+        }
+
+        [Fact]
+        public void Example_BuildingWithACustomizedPipeline()
+        {
+            //arrange
+            _fixture.Customizations.Add(new AirportCodeSpecimenBuilder());
+            FlightDetails flightDetails = _fixture.Create<FlightDetails>();
+
+            //assert
+            flightDetails.ArrivalAirportCode.Should().BeOneOf("AAA", "BBB");
+            flightDetails.DepartureAirportCode.Should().BeOneOf("AAA", "BBB");
         }
     }
 }

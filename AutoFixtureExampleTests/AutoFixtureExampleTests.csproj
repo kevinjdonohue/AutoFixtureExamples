@@ -68,6 +68,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AirportTests.cs" />
     <Compile Include="CalculatorTests.cs" />
     <Compile Include="DebugMessageBufferTests.cs" />
     <Compile Include="EmailMessageBufferTests.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="NameJoinerTests.cs" />
     <Compile Include="OrderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpecimenBuilders\AirportCodeSpecimenBuilder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -22,7 +22,7 @@ namespace AutoFixtureExample
             get { return _departureAirportCode; }
             set
             {
-                EnsureValidAirportCode(value);
+                AirportCodeUtils.EnsureValidAirportCode(value);
                 _departureAirportCode = value;
             }
         }
@@ -32,20 +32,11 @@ namespace AutoFixtureExample
             get { return _arrivalAirportCode; }
             set
             {
-                EnsureValidAirportCode(value);
+                AirportCodeUtils.EnsureValidAirportCode(value);
                 _arrivalAirportCode = value;
             }
         }
 
-        private void EnsureValidAirportCode(string airportCode)
-        {
-            var isWrongLength = airportCode.Length != 3;
-            var isWrongCase = airportCode != airportCode.ToUpperInvariant();
 
-            if (isWrongLength || isWrongCase)
-            {
-                throw new ApplicationException($"{airportCode} is an invalid airport");
-            }
-        }
     }
 }
