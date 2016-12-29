@@ -1,9 +1,11 @@
 ﻿using System;
 using AutoFixtureExample;
+using AutoFixtureExampleTests.AutoDataAttributes;
 using FluentAssertions;
 using Moq;
 using Ploeh.AutoFixture;
 using Ploeh.AutoFixture.AutoMoq;
+using Ploeh.AutoFixture.Xunit2;
 using Xunit;
 
 namespace AutoFixtureExampleTests
@@ -79,6 +81,21 @@ namespace AutoFixtureExampleTests
             _fixture.Customize(new AutoMoqCustomization());
             Mock<IEmailGateway> mockGateway = _fixture.Freeze<Mock<IEmailGateway>>();
             EmailMessageBuffer sut = _fixture.Create<EmailMessageBuffer>();
+
+            //act
+            sut.SendAll();
+
+            //assert
+            sut.UnsentMessagesCount.Should().Be(0);
+            mockGateway.Verify(x => x.Send(It.IsAny<EmailMessage>()), Times.Exactly(3));
+        }
+
+        [Theory]
+        [AutoMoqData]
+        public void SendAll_ShouldSendThreeMessages_AutoMoqData([Frozen] Mock<IEmailGateway> mockGateway,
+            EmailMessageBuffer sut)
+        {
+            //arrange
 
             //act
             sut.SendAll();
