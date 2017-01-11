@@ -90,10 +90,24 @@ namespace AutoFixtureExampleTests
             mockGateway.Verify(x => x.Send(It.IsAny<EmailMessage>()), Times.Exactly(3));
         }
 
+        [Fact]
+        public void Foo_AutoMoq_WithReturnValue()
+        {
+            _fixture.Customize(new AutoMoqCustomization());
+            Mock<IEmailGateway> mockGateway = _fixture.Freeze<Mock<IEmailGateway>>();
+            EmailMessageBuffer sut = _fixture.Create<EmailMessageBuffer>();
+            EmailMessage emailMessage = _fixture.Create<EmailMessage>();
+
+            string wasSent = sut.SendOne(emailMessage);
+
+            wasSent.Should().Be("The call was successful.");
+            mockGateway.Verify(x => x.Send(emailMessage), Times.Once);
+        }
+
         [Theory]
         [AutoMoqData]
         public void SendAll_ShouldSendThreeMessages_AutoMoqData([Frozen] Mock<IEmailGateway> mockGateway,
-            EmailMessageBuffer sut)
+                EmailMessageBuffer sut)
         {
             //arrange
 

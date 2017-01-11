@@ -58,5 +58,12 @@ namespace AutoFixtureExample
             _emailGateway.Send(email);
             _emails.Remove(email);
         }
+
+        public string SendOne(EmailMessage emailMessage)
+        {
+            SendEmail(emailMessage);
+
+            return "The call was successful.";
+        }
     }
 }
